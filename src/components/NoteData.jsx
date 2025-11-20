@@ -11,7 +11,7 @@ function NoteData({Notes}) {
       {/* Add Note Button */}
       <button
          onClick={() => navigate(`/note/${Noteid}`)}
-        className="px-4 py-2 rounded-xl bg-gradient-to-r from-lime-400 to-green-600 text-black font-semibold shadow-lg hover:scale-105 hover:shadow-lime-400/40 transition-all duration-300"
+        className="px-4 py-2 z-10 rounded-xl bg-gradient-to-r from-lime-400 to-green-600 text-black font-semibold shadow-lg hover:scale-105 hover:shadow-lime-400/40 transition-all duration-300"
       >
         + Add Note
       </button>
