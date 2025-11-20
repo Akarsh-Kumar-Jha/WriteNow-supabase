@@ -46,8 +46,20 @@ getNotes();
 
 
 
-  return (
-    <div className="min-h-screen w-full bg-zinc-900 flex flex-col justify-betwwen items-center relative">
+  return ( 
+    <div className="min-h-screen w-full relative flex flex-col justify-betwwen items-center p-7">
+       <div
+   className="absolute inset-0 z-0"
+   style={{
+     backgroundColor: '#0a0a0a',
+     backgroundImage: `
+       radial-gradient(circle at 25% 25%, #222222 0.5px, transparent 1px),
+       radial-gradient(circle at 75% 75%, #111111 0.5px, transparent 1px)
+     `,
+     backgroundSize: '10px 10px',
+     imageRendering: 'pixelated',
+   }}
+ />
       <Navbar />
       <NoteData Notes={Notes} />
 
@@ -55,7 +67,7 @@ getNotes();
   <div className="h-[2px] w-full bg-gradient-to-r from-lime-400/80 via-lime-300/50 to-lime-400/80 rounded-xl"></div>
 
   {/* Notes Grid */}
-  <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+  <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center mb-5">
     {
     Notes?.map((note, index) => (
       <div
@@ -63,11 +75,11 @@ getNotes();
         onClick={() => navigate(`/note/${note?.id}`)}
         className="rounded-2xl cursor-pointer border border-white/10 bg-white/5 backdrop-blur-lg h-[180px] w-[250px] flex flex-col justify-evenly items-center p-4 shadow-lg shadow-lime-400/10 hover:shadow-lime-400/30 hover:scale-105 transition-all duration-300"
       >
-        <h2 className="text-lg font-semibold text-lime-300 text-center tracking-wide">
-          {note.Heading}
+        <h2 className="text-xl font-semibold text-lime-300 text-center tracking-wide">
+          {note.Heading || "Untitled Note"}
         </h2>
-        <p className="text-sm text-gray-300 text-center line-clamp-3">
-          {note.Content.substring(0,80)}...
+        <p className="text-sm text-white/40 text-center line-clamp-3 text-wrap">
+          {note.Content.slice(0, 25) || "Empty Note"}...
         </p>
       </div>
     ))}
