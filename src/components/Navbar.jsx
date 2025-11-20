@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext'
 function Navbar() {
   const {user,loading} = useContext(AuthContext);
   return (
-    <nav className='w-[90%] h-[10vh] bg-black/30 rounded-2xl flex justify-between items-center absolute top-5 shadow-2xl backdrop-blur-xl px-3 py-1'>
+    <nav className='w-[90%] h-[10vh] bg-white/5 rounded-2xl flex justify-between items-center absolute top-5 shadow-2xl backdrop-blur-xl px-3 py-1 border-white/10 border-2'>
 <div className='w-[110px] h-auto'>
   <img className='h-full w-full' src="https://kbcuiyitunpejxjppefq.supabase.co/storage/v1/object/public/Logo/Gemini_Generated_Image_s1ok0bs1ok0bs1ok-removebg-preview.png" alt="" />
 </div>
